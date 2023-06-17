@@ -1,0 +1,18 @@
+.footer {
+    padding: 35px 0px 40px 0px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+}
+
+@media (max-width: 479.98px) {
+    .footer__container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,211 @@
+.header {
+  // position: absolute; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // border: 1px solid green;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  &__container {
+    // border: 1px solid green;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    min-height: 114px;
+  }
+
+  &__logo {
+    // border: 1px solid green;
+    z-index: 10;
+  }
+
+  &__menu {
+    // border: 1px solid green;
+    flex: 1 1 auto;
+  }
+
+  &__button {
+    // border: 1px solid green;
+    display: flex;
+    flex: 0 0 252px;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__item {
+    margin-right: 40px;
+  }
+
+  &__link {
+    font-family: "Raleway";
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    color: #000000;
+    position: relative;
+  }
+  &__link::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ec5863;
+    transition: 0.3s ease 0s;
+
+  }
+  &__link:hover::after {
+    width: 100%;
+    color: #ec5863;
+  }
+  &__link:hover {
+    color: #ec5863;
+  }
+}
+.button-blud-shadow:hover {
+  box-shadow:  2px 4px 32px #4285f4;
+  border: 0.5px solid rgb(255, 255, 255);
+}
+.button-blue {
+  background: #4285f4;
+  padding: 14px 30px;
+}
+.burger-menu {
+}
+
+//___break-points_____________________________________________
+// _________________ 991.98px________________________
+@media (max-width: 991.98px) {
+  .header__button {
+    flex: 0 0 180px;
+  }
+  .menu__item {
+    margin-right: 20px;
+  }
+}
+// _________________ 767.98px________________________
+@media (max-width: 767.98px) {
+  .header {
+    // background-color: #FAFBFD;
+  }
+  .menu__list {
+    // border: 1px solid orange;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: -21%;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 90px 0px 20px 0px;
+    transition: left 0.3s ease 0s;
+    background: #fafbfd;
+  }
+
+  .menu__item {
+    margin-bottom: 20px;
+  }
+  .menu__link {
+    font-size: 20px;
+  }
+  .header__button {
+    justify-content: flex-start;
+  }
+
+  //burger-menu (кнопка)____________
+  .burger-menu {
+    position: relative;
+    display: flex;
+    flex: 0 0 35px;
+    height: 26px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
+  .burger-menu::before,
+  .burger-menu::after {
+    content: "";
+    height: 2px;
+    background: black;
+  }
+  .burger-menu span {
+    height: 2px;
+    background: black;
+  }
+  // крестик (кнопка)_______________
+  .cross-burger-menu {
+    display: none;
+    position: relative;
+    height: 35px;
+    flex: 0 0 35px;
+    margin-left: 10px;
+  }
+  .cross-burger-menu::before,
+  .cross-burger-menu::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: black;
+  }
+
+  .cross-burger-menu::before {
+    transform: rotate(45deg);
+  }
+  .cross-burger-menu::after {
+    transform: rotate(-45deg);
+  }
+
+  // открытие меню-бургер (нажатие на кнопку бургер)
+  .header:target {
+    .menu__list {
+      left: 0%;
+    }
+    .header__container {
+      margin-bottom: 175px;
+    }
+   
+
+    // ширма для скрытия меню (когда пользуемся скроллом)
+    .menu__body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 82%;
+      height: 90px;
+      background-color: #fafbfd;
+    }
+    .burger-menu {
+      display: none;
+    }
+    .cross-burger-menu {
+      display: flex;
+    }
+
+    
+  }
+}
+// _________________ 479.98px________________________
+@media (max-width: 479.98px) {
+  .header__logo {
+    flex: 0 0 40px;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,134 @@
+//_______обнуление______________
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  line-height: 1;
+  background: #fafbfd;
+  font-size: 12px;
+  color: #616161;
+  font-weight: 400;
+  line-height: 138.5%;
+  font-family: Rubik;
+}
+
+// обвёртка сайта
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+// _________________ ограничивающий контейнер
+
+[class*="__container"] {
+  max-width: 1087px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+// стили для info-block_________________
+
+.info-block {
+  &__title {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 126%;
+    color: #000000;
+  }
+  &__title:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &__title span {
+    color: #4285f4;
+  }
+  &__title-red span {
+    color: #EC5863;
+  }
+
+  &__text {
+   
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 138.5%;
+    letter-spacing: 0.08em;
+  }
+  &__text:not(last-child) {
+    margin-bottom: 24px;
+  }
+
+ 
+}
+
+// кнопки для всех страниц __________________
+.button {
+  display: flex;
+  width: 144px;
+  height: 40px;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway";
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  color: #fcfdfe;
+  background-color: #ec5863;
+  // padding: 14px 32px;
+  border-radius: 5px;
+}
+.button:hover {
+  box-shadow:  2px 4px 32px #ec5863;
+  border: 0.5px solid rgb(255, 255, 255);
+}
+// _________________ break-points _____________________________
+
+@media (max-width: 1087px) {
+  //1й брейк-поинт - это ширина ограничивающего контайнера (15px + 1057px + 15px)
+  [class*="__container"] {
+    max-width: 970px;
+  }
+}
+//                               TABLET
+@media (max-width: 991.98px) {
+  [class*="__container"] {
+    max-width: 750px;
+  }
+}
+//                               MOBILE
+@media (max-width: 767.98px) {
+  [class*="__container"] {
+    max-width: none;
+  }
+}
+//                                MOBOLE SMALL
+@media (max-width: 479.98px) {
+}
